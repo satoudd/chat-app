@@ -46,14 +46,89 @@
 .chat-header {
   height: 100px;
   padding: 0px 40px;
+  display: flex;
+  justyfy-content: space-between;
 }
-.message {
+.header-title {
+  color: #333;
+  font-size: 24px;
+  padding: 36px 0px 0px 40px;
+}
+.header-button {
+  margin-top: 40px;
+}
+.header-button a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  color:darkred;
+}
+.messages {
   background-color: #fafafa;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0px;
+  overflow: scroll;
+}
+
+.message {
+  magin: 10px o o o;
+}
+
+.upper-message {
+  display: flex;
+}
+.message-user {
+  color:  #434a54;
+  font-size: 16px;
+}
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 .form {
   background-color: #dddddd
   height: 90px;
   padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  diplay: flex;
+  widht: 100%;
+}
+
+.form-message {
+  border: none;
+  height: 50px;
+  widht: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38aef0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white; 
+  padding: 12px;
+  widht: 5px 10px;
+  text-align: center;
+}
+
+.hiden {
+  display: none;app
 }
