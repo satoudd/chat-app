@@ -1,8 +1,19 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  before_action :configure_permitted_permitted_parameters, if: :devise_contoroller?
+ 
+  def edit
+  end
+
+  def update
+  　if current_user.update(user_params)
+     redirect_to root_path
+  else
+    render :edit
+   end
+  end
 
   private
-  def configure_parameter_santizer.permit(:sing_up, keys: [:name])
- end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 end
