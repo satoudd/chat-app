@@ -2,9 +2,9 @@
   display: flex;
 }
 .side-bar {
-  widht: 300px;
+  width: 300px;
   height: 100vh;
-  backgriound-color:#253141;
+  background-color:#253141;
 }
 .side-bar-header {
   height: 100px;
@@ -28,7 +28,7 @@
 }
 .rooms {
   height: 100px;
-  background-color: #2f3e51
+  background-color: #2f3e51;
   padding: 0px 20px;
   overflow: scroll;
 }
@@ -40,14 +40,14 @@
   color: white;
 }
 .chat {
-  widht: calc(100vw 300px);
+  width: calc(100vw - 300px);
   background-color: #ffffff;
 }
 .chat-header {
   height: 100px;
   padding: 0px 40px;
   display: flex;
-  justyfy-content: space-between;
+  justify-content: space-between;
 }
 .header-title {
   color: #333;
@@ -70,7 +70,7 @@
 }
 
 .message {
-  magin: 10px o o o;
+  margin: 10px 0;
 }
 
 .upper-message {
@@ -91,7 +91,7 @@
   margin-bottom: 40px;
 }
 .form {
-  background-color: #dddddd
+  background-color: #dddddd;
   height: 90px;
   padding: 20px 40px;
   display: flex;
@@ -99,15 +99,16 @@
 
 .form-input {
   background-color: white;
-  diplay: flex;
-  widht: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .form-message {
   border: none;
   height: 50px;
-  widht: 100%;
+  width: 100%;
   padding-left: 10px;
+  display: flex;
 }
 
 .form-submit {
@@ -125,10 +126,11 @@
   background-color: lightblue;
   color: white; 
   padding: 12px;
-  widht: 5px 10px;
+  width: 60px;
+  margin: 5px 10px;
   text-align: center;
 }
 
-.hiden {
-  display: none;app
+.hidden {
+  display: none;
 }
