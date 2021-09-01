@@ -1,22 +1,26 @@
 require 'rails_helper'
 
-RSpec.describe Room, type: :model do
+RSpec.describe 'チャットルームの削除機能', type: :system do
   before do
-    @room = FactoryBot.build(:room)
+    @room_user = FactoryBot.create(:room_user)
   end
 
-  describe 'チャットルーム作成' do
-    context '新規作成できる場合' do
-      it "nameの値が存在すれば作成できる" do
-        expect(@room).to be_valid
-      end
-    end
-    context '新規作成できない場合' do
-      it "nameが空では作成できない" do
-        @room.name = ''
-        @room.valid?
-        expect(@room.errors.full_messages).to include("Name can't be blank")
-      end
-    end
+  it 'チャットルームを削除すると、関連するメッセージがすべて削除されている' do
+    # サインインする
+    sign_in(@room_user.user)
+
+    # 作成されたチャットルームへ遷移する
+    click_on(@room_user.room.name)
+
+    # メッセージ情報を5つDBに追加する
+    FactoryBot.create_list(:message, 5, room_id: @room_user.room.id, user_id: @room_user.user.id)
+
+    # 「チャットを終了する」ボタンをクリックすることで、作成した5つのメッセージが削除されていることを確認する
+    expect {
+      find_link('チャットを終了する',  href: room_path(@room_user.room)).click
+    }.to change { @room_user.room.messages.count }.by(-5)
+
+    # トップページに遷移していることを確認する
+    expect(current_path).to eq(root_path)
   end
 end
